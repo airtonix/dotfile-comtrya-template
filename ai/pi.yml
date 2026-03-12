@@ -1,0 +1,28 @@
+---
+depends:
+  - devtools.pi
+
+actions:
+  - action: command.run
+    command: mkdir
+    where: os.name == "linux" || os.name == "macos"
+    args:
+      - -p
+      - "{{user.home_dir}}/.pi/agent"
+      - "{{user.home_dir}}/.config/opencode"
+
+  - action: file.link
+    to: "{{user.home_dir}}/.pi/agent/prompts"
+    from: commands
+
+  - action: file.link
+    to: "{{user.home_dir}}/.pi/agent/skills"
+    from: skills
+
+  - action: file.link
+    to: "{{user.home_dir}}/.config/opencode/command"
+    from: commands
+
+  - action: file.link
+    to: "{{user.home_dir}}/.config/opencode/skills"
+    from: skills

@@ -1,0 +1,12 @@
+---
+actions:
+  - action: command.run
+    command: mkdir
+    where: os.name == "linux" || os.name == "macos"
+    args:
+      - -p
+      - "{{user.home_dir}}/.pi/agent"
+
+  - action: file.link
+    to: "{{user.home_dir}}/.pi/agent/settings.json"
+    from: pi/agent/settings.json
