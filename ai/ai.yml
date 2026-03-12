@@ -1,4 +1,12 @@
 ---
+#
+# General Ai Files.
+#
+# Guidelines: Avoid platform specific idioms, stick to:
+# - plain commands
+# - standard skill spec
+# - AGENTS.md
+
 depends:
   - devtools.pi
 
@@ -18,6 +26,10 @@ actions:
   - action: file.link
     to: "{{user.home_dir}}/.pi/agent/skills"
     from: skills
+
+  - action: file.link
+    to: "{{user.home_dir}}/.pi/agent/AGENTS.md"
+    from: AGENTS.md
 
   - action: file.link
     to: "{{user.home_dir}}/.config/opencode/command"

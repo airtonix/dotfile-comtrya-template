@@ -91,7 +91,7 @@ When team member needs non-standard provider (e.g., nix on Linux):
 - action: package.install
   name: rust
   provider: nix
-  where: user.username == "zenobius"
+  where: user.username == "exampleuser"
 ```
 
 Or create team variant:
@@ -100,7 +100,7 @@ Or create team variant:
 - action: package.install
   name: rust
   variants:
-    - where: user.username == "zenobius"
+    - where: user.username == "exampleuser"
       provider: nix
     - provider: apt  # default fallback
 ```
@@ -357,9 +357,9 @@ curl -fsSL https://get.comtrya.dev | INSTALL_VERSION=$COMTRYA_VERSION sh
 ### Context Variables
 | Variable | Example | Description |
 |----------|---------|-------------|
-| `{{ user.home_dir }}` | `/home/zenobius` | Home directory |
-| `{{ user.config_dir }}` | `/home/zenobius/.config` | Config directory |
-| `{{ user.username }}` | `zenobius` | Username |
+| `{{ user.home_dir }}` | `/home/exampleuser` | Home directory |
+| `{{ user.config_dir }}` | `/home/exampleuser/.config` | Config directory |
+| `{{ user.username }}` | `exampleuser` | Username |
 | `{{ os.name }}` | `linux`, `macos`, `windows` | OS name |
 
 ## Common Mistakes (Red Flags)
