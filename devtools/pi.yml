@@ -1,4 +1,11 @@
 ---
+# Pi Coding Agent
+#
+# Pi specific things here:
+# - extensions
+# - settings
+# - models
+
 actions:
   - action: command.run
     command: mkdir
@@ -10,3 +17,8 @@ actions:
   - action: file.link
     to: "{{user.home_dir}}/.pi/agent/settings.json"
     from: pi/agent/settings.json
+
+  - action: file.link
+    source: pi/agent/extensions
+    target: "{{user.home_dir}}/.pi/agent/extensions"
+    walk_dir: true

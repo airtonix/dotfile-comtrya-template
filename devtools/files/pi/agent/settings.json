@@ -1,3 +1,10 @@
 {
-  "enableSkillCommands": true
+  "enableSkillCommands": true,
+  "extensions": [
+    "npm:pi-mermaid",
+    "npm:pi-subagents",
+    "npm:pi-read-map",
+    "npm:pi-read-many"
+  ],
+  "shellCommandPrefix": "eval \"$(mise env -s bash)\"\nshopt -s expand_aliases\neval \"$(grep '^alias ' ~/.zshrc)\""
 }
